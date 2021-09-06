@@ -1,8 +1,7 @@
-package lambda.stream;
+
 
 import java.util.*;
 import java.util.stream.*;
-import java.util.Random;
 
 public class Stream2 {
     

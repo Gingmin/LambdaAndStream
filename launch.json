@@ -1,0 +1,11 @@
+{
+    "configuration" : [
+    {
+        "type" : "java",
+        "name" : "Debug (Launch) - Current File",
+        "request" : "launch",
+        "mainClass" : "${file}",
+        "jdkpath" : "C:\\Program Files\\Java\\jdk-11\\bin"
+    }
+    ]
+}
