@@ -148,8 +148,29 @@ public class Stream6 {
     //  System.out.println(optInt2.getAsInt());    //NoSuchElementException
         System.out.println("optInt1 = " + optInt1);
         System.out.println("optInt2 = " + optInt2);
+        System.out.println("opt.equals(optInt2)?" + optInt1.equals(optInt2)); 
+        //=======================================================================================
+        
+        Optional<String> opt = Optional.ofNullable(null); //null을 저장
+        Optional<String> opt2 = Optional.empty();         //빈 객체를 생성
+        System.out.println("opt = " + opt);
+        System.out.println("opt2 = " + opt2);
+        System.out.println("opt.equals(opt2)?" + opt.equals(opt2)); //true
+
         //=======================================================================================
 
+        int result3 = optStrToInt(Optional.of("123"), 0);
+        int result4 = optStrToInt(Optional.of(""), 0);
 
+        System.out.println("result3=" + result3);
+        System.out.println("result4=" + result4);
+    }
+
+    static int optStrToInt(Optional<String> optStr, int defaultValue) {
+        try {
+            return optStr.map(Integer::parseInt).get();
+        } catch (Exception e) {
+            return defaultValue;
+        }
     }
 }
